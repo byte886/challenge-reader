@@ -1,0 +1,33 @@
+{
+  "name": "drnh",
+  "description": "国史馆档案影像页锁定图：满铺水印 + 斜的黄色双语指令 + 4-6 个绿色图标",
+  "instruction": {
+    "color": { "rMin": 170, "gMin": 170, "bMax": 130, "chromaExpr": "R+G-2B", "chromaMin": 60 },
+    "dilate": 2,
+    "minComponent": 200,
+    "minPixels": 200
+  },
+  "icons": {
+    "color": { "gMin": 170, "rMax": 140, "bMax": 140 },
+    "minComponent": 800,
+    "mergeDistance": 160
+  },
+  "templateDir": "templates",
+  "match": {
+    "size": 64,
+    "angleStep": 15,
+    "threshold": 0.6
+  },
+  "specialRules": {
+    "earth": "nonTargetBelow"
+  },
+  "targets": [
+    { "key": "yinyang",     "regex": "tai\\s*ch|ta\\s*ch|taich|taiji|太.", "templates": ["yinyang.png"] },
+    { "key": "earth",       "regex": "earth|globe|地球",                "templates": ["earth.png"] },
+    { "key": "clock",       "regex": "clock|時鐘|时钟",                 "templates": ["clock.png"] },
+    { "key": "gear",        "regex": "gear|齒輪|齿轮",                  "templates": ["gear.png", "gear-alt.png"] },
+    { "key": "basketball",  "regex": "basketball|籃球|篮球",            "templates": ["basketball.png"] },
+    { "key": "mandala",     "regex": "mandala|曼陀",                    "templates": ["mandala.png"] },
+    { "key": "tire",        "regex": "tire|輪胎|轮胎",                  "templates": ["tire.png"] }
+  ]
+}

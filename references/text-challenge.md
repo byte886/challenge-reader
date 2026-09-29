@@ -25,7 +25,7 @@
 
 ```bash
 # $SKILL_DIR 为本技能目录（双机家目录名不同，一律用 $HOME 派生，不写死）
-SKILL_DIR="$HOME/Doubao/skills/captcha-reader"
+SKILL_DIR="$HOME/Doubao/skills/challenge-reader"
 
 # 基础增强（灰度 + 6x放大 + 对比度2.5 + 锐化）
 python3 "$SKILL_DIR/scripts/enhance_captcha.py" /tmp/captcha_raw.png /tmp/captcha_enhanced.png
@@ -69,7 +69,7 @@ python3 "$SKILL_DIR/scripts/enhance_captcha.py" /tmp/captcha_raw.png /tmp/captch
 当验证码难以辨认时，一次性生成多个增强版本对比读取：
 
 ```bash
-SKILL_DIR="$HOME/Doubao/skills/captcha-reader"   # 若同一会话上方已定义可省略
+SKILL_DIR="$HOME/Doubao/skills/challenge-reader"   # 若同一会话上方已定义可省略
 python3 "$SKILL_DIR/scripts/enhance_captcha.py" raw.png enhanced.png
 python3 "$SKILL_DIR/scripts/enhance_captcha.py" raw.png bw.png --threshold
 python3 "$SKILL_DIR/scripts/enhance_captcha.py" raw.png big.png --scale 8 --contrast 3.5

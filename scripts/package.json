@@ -1,0 +1,12 @@
+{
+  "name": "challenge-reader-scripts",
+  "version": "0.1.0",
+  "private": true,
+  "description": "视觉点选识别脚本：颜色分割 + 模板匹配零训练路线",
+  "main": "lib_pointselect.js",
+  "bin": { "point-select-solve": "solve.js" },
+  "dependencies": {
+    "jpeg-js": "^0.4.4",
+    "pngjs": "^7.0.0"
+  }
+}

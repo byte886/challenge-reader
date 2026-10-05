@@ -40,7 +40,10 @@ compatibility: 文本型增强与点选颜色分割在 macOS(Darwin) 实测；�
 ## 常用命令
 
 ```bash
-SKILL_DIR="$HOME/DoubaoWork/skills/challenge-reader"
+# SKILL_DIR：本技能实际安装目录。同一套技能可能安装在 ~/Doubao/skills、
+# ~/DoubaoWork/skills 或其它路径（多 clone/软链共享一套技能），不写死单一位置；
+# 以技能加载返回的实际路径为准。
+SKILL_DIR="<本技能安装目录>"
 (cd "$SKILL_DIR/scripts" && npm install)
 
 # 文本型：增强

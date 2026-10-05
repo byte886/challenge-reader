@@ -24,8 +24,9 @@
 运行增强脚本 `scripts/enhance_captcha.py` 生成放大、高对比度版本：
 
 ```bash
-# $SKILL_DIR 为本技能目录（双机家目录名不同，一律用 $HOME 派生，不写死）
-SKILL_DIR="$HOME/Doubao/skills/challenge-reader"
+# $SKILL_DIR 为本技能实际安装目录（同一套技能可能安装在 ~/Doubao/skills、
+# ~/DoubaoWork/skills 或其它路径，不写死单一位置；以技能加载返回的实际路径为准）
+SKILL_DIR="<本技能安装目录>"
 
 # 基础增强（灰度 + 6x放大 + 对比度2.5 + 锐化）
 python3 "$SKILL_DIR/scripts/enhance_captcha.py" /tmp/captcha_raw.png /tmp/captcha_enhanced.png
@@ -69,7 +70,7 @@ python3 "$SKILL_DIR/scripts/enhance_captcha.py" /tmp/captcha_raw.png /tmp/captch
 当验证码难以辨认时，一次性生成多个增强版本对比读取：
 
 ```bash
-SKILL_DIR="$HOME/Doubao/skills/challenge-reader"   # 若同一会话上方已定义可省略
+SKILL_DIR="<本技能安装目录>"   # 若同一会话上方已定义可省略
 python3 "$SKILL_DIR/scripts/enhance_captcha.py" raw.png enhanced.png
 python3 "$SKILL_DIR/scripts/enhance_captcha.py" raw.png bw.png --threshold
 python3 "$SKILL_DIR/scripts/enhance_captcha.py" raw.png big.png --scale 8 --contrast 3.5

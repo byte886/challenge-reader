@@ -1,4 +1,5 @@
 ---
+type: capability
 name: challenge-reader
 description: 人机挑战（CAPTCHA/解锁图）识别辅助，覆盖三类常见挑战并输出对应结果——①文本型：扭曲/干扰字符图片，图像增强后读出字符串交给输入框；②点选型（图标/文字/语义点选）：先读懂图中提示文字（常为彩色、倾斜、水印）或外部指令，再在同一张图内定位目标图标/文字，输出点击坐标（百分比+像素）与置信度；③（预留）滑块/拼图：缺口定位。零训练默认为颜色分割+连通域+归一化模板匹配（旋转扫描 IoU），场景与模板配置驱动；可选 ddddocr / YOLO / VLM 后端。浏览器侧的打开、截图、填值、点击交给浏览器/GUI 控制能力。
 compatibility: 文本型增强与点选颜色分割在 macOS(Darwin) 实测；点选核心纯 Node(jpeg-js/pngjs) 可跨平台，提示文字 OCR 默认用 macOS Vision(scripts/ocr_text)，非 macOS 需改用 ddddocr 等后端。执行前先判平台与依赖，不硬跑。
